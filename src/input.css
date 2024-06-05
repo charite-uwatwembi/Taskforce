@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+    
+.overlay-text {
+position: absolute;
+bottom: 60px; 
+left: 40px; 
+color: #fff; 
+z-index: 1;
+}
+
+.image-container::after {
+position: absolute;       
+} 
+
+.hidden {
+visibility: hidden;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.image {
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .overlay-text, .read-more {
+        display: none;
+    }
+}
