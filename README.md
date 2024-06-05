@@ -23,7 +23,11 @@ The purpose of this coding challenge is to assess your skills in HTML, CSS, and 
    ```bash
    cd TaskForce
    ```
-3. Open `index.html` in your web browser to view the interactive photo gallery.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Open `index.html` in your web browser to view the interactive photo gallery.
 
 ## Usage
 
