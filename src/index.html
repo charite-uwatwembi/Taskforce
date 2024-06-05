@@ -6,65 +6,100 @@
     <title>Document</title>
     <link rel="stylesheet" href="./output.css">
     <style>
-        .onh:hover {
+        .image:hover {
            filter: grayscale(100%) blur(6px);
          }
 
-         .image-container {
-            position: relative;
-            display: inline-block;
-            }
-
-       
-        .overlay-text {
-        position: absolute;
-        bottom: 60px; /* Adjust as needed */
-        left: 40px; /* Adjust as needed */
-        color: #fff; /* Adjust as needed */
-        z-index: 1;
-        }
-        
-        /* Apply hover effects to the pseudo-element */
-        .image-container::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent overlay */
-        pointer-events: none; 
-        transition: filter 0.3s ease-in;
-        }
-
-        .image-container:hover::after {
+         .image-container:hover::after {
         filter: grayscale(100%) blur(10px);
         }
+
+         .image-container {
+            position: relative;
+            
+            }
+            
+        .overlay-text {
+        position: absolute;
+        bottom: 60px; 
+        left: 40px; 
+        color: #fff; 
+        z-index: 1;
+        }
+
+        .image-container::after {
+        position: absolute;       
+        } 
+        .hidden {
+    visibility: hidden;
+}
+
+       
 
        </style>
    
 </head>
 <body class="">
     <div class="flex items-center justify-center gap-1 p-20 bg-black">
+
         <div class="image-container">
-            <img class="background-image onh transition duration-500 ease-in-out transform hover:scale-105   " src="utillities/wolf.svg" alt="">
-            <p class="overlay-text  text-4xl font-mono font-semibold">FENNEC <BR> Fox <br> <span class="text-xs">India </span></p>
+            <img class="background-image image transition duration-500 ease-in-out transform hover:scale-105" src="utillities/wolf.svg" alt="">
+            <div class="overlay-text-wrapper ">
+                <p class="overlay-text text-4xl font-mono font-semibold">FENNEC <BR> Fox <br> <span class="text-xs">India </span></p>
+                <p class="read-more text-sky-500 hidden absolute bottom-10 left-10">Read more ➜</p>
+            </div>
         </div>
         <div class="image-container">
-            <img class="background-image onh transition duration-500 ease-in-out transform hover:scale-105  hover:[filter:grayscale(100%)] " src="utillities/whale.svg" alt="">
-            <p class="overlay-text  text-4xl font-mono font-semibold">HUMPBACK <BR> Whale <br> <span class="text-xs">South Africa </span></p>
+            <img class="background-image image transition duration-500 ease-in-out transform hover:scale-105" src="utillities/whale.svg" alt="">
+            <div class="overlay-text-wrapper ">
+                <p class="overlay-text text-4xl font-mono font-semibold">FENNEC <BR> Fox <br> <span class="text-xs">India </span></p>
+                <p class="read-more text-sky-500 hidden absolute bottom-10 left-10">Read more ➜</p>
+            </div>
         </div>
         <div class="image-container">
-            <img class="background-image onh transition duration-500 ease-in-out transform hover:scale-105  hover:[filter:grayscale(100%)] " src="utillities/baboon.svg" alt="">
-            <p class="overlay-text  text-4xl font-mono font-semibold">COMMON BROWN <BR> BABOON <br> <span class="text-xs">South Africa </span></p>
+            <img class="background-image image transition duration-500 ease-in-out transform hover:scale-105" src="utillities/baboon.svg" alt="">
+            <div class="overlay-text-wrapper ">
+                <p class="overlay-text text-4xl font-mono font-semibold">FENNEC <BR> Fox <br> <span class="text-xs">India </span></p>
+                <p class="read-more text-sky-500 hidden absolute bottom-10 left-10">Read more ➜</p>
+            </div>
         </div>
         <div class="image-container">
-            <img class="background-image onh transition duration-500 ease-in-out transform hover:scale-105  hover:[filter:grayscale(100%)] " src="utillities/deer.svg" alt="">
-            <p class="overlay-text  text-4xl font-mono font-semibold">SPOTTED <BR> DEER <br> <span class="text-xs">Amazon </span></p>
+            <img class="background-image image transition duration-500 ease-in-out transform hover:scale-105" src="utillities/deer.svg" alt="">
+            <div class="overlay-text-wrapper ">
+                <p class="overlay-text text-4xl font-mono font-semibold">FENNEC <BR> Fox <br> <span class="text-xs">India </span></p>
+                <p class="read-more text-sky-500 hidden absolute bottom-10 left-10">Read more ➜</p>
+            </div>
         </div>
-       
+        
 
         
-      </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            var imageContainers = document.querySelectorAll('.image-container');
+        
+           
+            imageContainers.forEach(function(container) {
+                
+                var overlayTextWrapper = container.querySelector('.overlay-text-wrapper');
+                var readMoreText = overlayTextWrapper.querySelector('.read-more');
+        
+                
+                container.addEventListener('mouseenter', function() {
+                    
+                    readMoreText.classList.remove('hidden');
+                });
+        
+                container.addEventListener('mouseleave', function() {
+                    
+                    readMoreText.classList.add('hidden');
+                });
+            });
+        });
+        </script>
+        
 </body>
 </html>
