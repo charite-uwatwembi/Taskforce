@@ -5,16 +5,17 @@
 // both operations in the order specified above.
 
 const stringManipulation = str => {
+    
     const length = str.length;
-
+    // check if the length is divisible by both 3 and 5
     if (length % 15 === 0) {
         return `"${[...str].reverse().join('')}"`;
     }
-
+    //check if the lenght is divisible by 3
     if (length % 3 === 0) {
         return `"${[...str].reverse().join('')}"`;
     }
-
+    //check if the lenght is divisible by 5
     if (length % 5 === 0) {
         return `"${[...str].map(char => char.charCodeAt(0)).join(' ')}"`;
     }

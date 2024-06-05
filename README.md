@@ -27,7 +27,12 @@ The purpose of this coding challenge is to assess your skills in HTML, CSS, and 
    ```bash
    npm install
    ```
-4. Open `index.html` in your web browser to view the interactive photo gallery.
+
+4. Run tailwind server:
+   ```bash
+   npm run tailwind
+   ```
+5. Open `index.html` in your web browser to view the interactive photo gallery.
 
 ## Usage
 
