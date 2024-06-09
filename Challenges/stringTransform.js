@@ -8,8 +8,10 @@ const stringManipulation = str => {
     
     const length = str.length;
     // check if the length is divisible by both 3 and 5
+    
     if (length % 15 === 0) {
-        return `"${[...str].reverse().join('')}"`;
+        const reversedStr = [...str].reverse().join('');
+        return `"${[...reversedStr].map(char => char.charCodeAt(0)).join(' ')}"`;
     }
     //check if the lenght is divisible by 3
     if (length % 3 === 0) {
@@ -27,3 +29,4 @@ const stringManipulation = str => {
 console.log(stringManipulation("Hamburger")); 
 console.log(stringManipulation("Pizza")); 
 console.log(stringManipulation("Chocolate Chip Cookie")); 
+console.log(stringManipulation("123456789012345")); 
